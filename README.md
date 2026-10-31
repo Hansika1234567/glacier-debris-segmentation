@@ -39,7 +39,9 @@ The dataset is organized into training, validation, and testing splits, with cor
 
 These counts are based on the notebook's dataset inspection outputs.
 
-The dataset files are not included in this repository. You must have access to the dataset and configure the appropriate paths to reproduce the experiments.
+The dataset files are not included in this repository. Access the dataset here:
+
+[Download Glacier Debris Segmentation Dataset](https://drive.google.com/file/d/1Q5OT3QVmBi7u7Pm5XQFKL6v5ujUNWdws/view?usp=sharing)
 
 ## ⚙️ Methodology
 
@@ -52,17 +54,48 @@ The notebook covers the following workflow:
 5. Training and validating the segmentation model.
 6. Evaluating predictions on the test dataset.
 
-## 📊 Evaluation Metrics
+## 🏋️ Training Details
 
-Segmentation performance is evaluated using metrics including:
+Training was continued from a previously saved checkpoint.
+
+- **Configured epochs:** 30
+- **Last completed epoch:** 28
+- **Training approach:** Resumed training using a previously saved checkpoint.
+
+### Model Checkpoints
+
+- [Previous Training Checkpoint](https://drive.google.com/file/d/1CTMlVl6DgmW1LQzZ_EemDfsu1vvBVD8I/view?usp=sharing)
+- [Latest Checkpoint (After Epoch 28)](https://drive.google.com/file/d/12_KmrrUmz1ni003jRFfdBAW06-TjONaP/view?usp=sharing)
+
+## 📊 Evaluation Results
+
+The following metrics were obtained from the model evaluation:
+
+| Metric | Result |
+|---|---:|
+| Background IoU | 0.894608 |
+| Debris IoU | 0.587007 |
+| Mean IoU (mIoU) | 0.740808 |
+| Precision | 0.805986 |
+| Recall | 0.683602 |
+| F1-score | 0.739766 |
+
+### Confusion Matrix Values
+
+| Metric | Pixel Count |
+|---|---:|
+| True Positives (TP) | 5,072,752 |
+| True Negatives (TN) | 30,294,855 |
+| False Positives (FP) | 1,221,095 |
+| False Negatives (FN) | 2,347,874 |
+
+### Evaluation Metrics Explained
 
 - **Intersection over Union (IoU):** Measures overlap between predicted and ground-truth regions.
 - **Mean IoU (mIoU):** Summarizes IoU across segmentation classes.
 - **Precision:** Measures the proportion of predicted positive pixels that are correct.
 - **Recall:** Measures the proportion of ground-truth positive pixels detected.
 - **F1-score:** Combines precision and recall.
-
-Numerical results and prediction visualizations should be added after verifying them against the final evaluation outputs.
 
 ## 🛠️ Tools and Technologies
 
@@ -96,6 +129,10 @@ The repository currently contains the training/testing notebook and this documen
 6. Execute the notebook cells in the appropriate order.
 
 **Note:** Reproducing the experiments requires access to the dataset, pretrained model weights, and any checkpoints referenced by the notebook.
+
+### Google Colab Notebook
+
+[Open the Training and Testing Notebook](https://colab.research.google.com/drive/1IKYfpIg3R5YoZUectrzNoR60LeSFom6A?usp=sharing)
 
 ## 🌍 Potential Applications
 
